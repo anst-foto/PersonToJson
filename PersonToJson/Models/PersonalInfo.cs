@@ -6,8 +6,9 @@ namespace PersonToJson.Models;
 
 public class PersonalInfo
 {
-    public required Person Person { get; set; }
-    public required Contacts Contacts { get; set; }
+    public required Person Person { get; init; }
+    public required Contacts Contacts { get; init; }
+    
 
     public static void UnLoad(PersonalInfo personalInfo, string path = "personal_info.json")
     {
