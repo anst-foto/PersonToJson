@@ -11,7 +11,7 @@ public class PersonalInfo
 
     public static void UnLoad(PersonalInfo personalInfo, string path = "personal_info.json")
     {
-        JsonSerializerOptions options = new JsonSerializerOptions
+        var options = new JsonSerializerOptions
         {
             Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
             WriteIndented = true

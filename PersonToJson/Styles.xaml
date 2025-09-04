@@ -32,8 +32,17 @@
            BasedOn="{StaticResource Style_ButtonDefault}">
         <Setter Property="Background" Value="DarkGreen"/>
     </Style>
+    <Style x:Key="Style_ButtonLoad" TargetType="Button"
+           BasedOn="{StaticResource Style_ButtonDefault}">
+        <Setter Property="Background" Value="DarkViolet"/>
+    </Style>
     <Style x:Key="Style_ButtonPath" TargetType="Button"
            BasedOn="{StaticResource Style_ButtonDefault}">
         <Setter Property="Background" Value="DarkBlue"/>
+    </Style>
+    
+    <Style x:Key="Style_Box" TargetType="HeaderedContentControl">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Foreground" Value="DarkSlateBlue"/>
     </Style>
 </ResourceDictionary>
