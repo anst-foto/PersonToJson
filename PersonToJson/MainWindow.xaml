@@ -1,6 +1,7 @@
 ﻿<Window x:Class="PersonToJson.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c="clr-namespace:PersonToJson.Components"
 
         Title="MainWindow"
 
@@ -16,76 +17,32 @@
                 <Expander Header="Имя"
                           Style="{StaticResource Style_Box}">
                     <StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <Label Content="Фамилия"
-                                   Target="Input_LastName"
-                                   Style="{StaticResource Style_Label}" />
-                            <TextBox x:Name="Input_LastName"
-                                     Style="{StaticResource Style_Input}" />
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <Label Content="Имя"
-                                   Target="Input_FirstName"
-                                   Style="{StaticResource Style_Label}" />
-                            <TextBox x:Name="Input_FirstName"
-                                     Style="{StaticResource Style_Input}" />
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <Label Content="Отчество"
-                                   Target="Input_Patronymic"
-                                   Style="{StaticResource Style_Label}" />
-                            <TextBox x:Name="Input_Patronymic"
-                                     Style="{StaticResource Style_Input}" />
-                        </StackPanel>
+                        <c:InputComponent x:Name="Input_LastName" 
+                                          Label="Фамилия"/>
+                        <c:InputComponent x:Name="Input_FirstName" 
+                                          Label="Имя"/>
+                        <c:InputComponent x:Name="Input_Patronymic" 
+                                          Label="Отчество"/>
                     </StackPanel>
                 </Expander>
 
                 <Expander Header="Контакты"
                           Style="{StaticResource Style_Box}">
                     <StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <Label Content="Телефон"
-                                   Target="Input_Phone"
-                                   Style="{StaticResource Style_Label}" />
-                            <TextBox x:Name="Input_Phone"
-                                     Style="{StaticResource Style_Input}" />
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <Label Content="Email"
-                                   Target="Input_Email"
-                                   Style="{StaticResource Style_Label}" />
-                            <TextBox x:Name="Input_Email"
-                                     Style="{StaticResource Style_Input}" />
-                        </StackPanel>
+                        <c:InputComponent x:Name="Input_Phone" 
+                                          Label="Телефон"/>
+                        <c:InputComponent x:Name="Input_Email" 
+                                          Label="Email"/>
 
                         <GroupBox Header="Адрес"
                                   Style="{StaticResource Style_Box}">
                             <StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                                    <Label Target="Input_Region"
-                                           Style="{StaticResource Style_Label}">
-                                        <Label.Content>
-                                            <TextBlock Text="Регион(республика, край, область, округ)"
-                                                       TextWrapping="WrapWithOverflow" />
-                                        </Label.Content>
-                                    </Label>
-                                    <TextBox x:Name="Input_Region"
-                                             Style="{StaticResource Style_Input}" />
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                                    <Label Content="Район"
-                                           Target="Input_District"
-                                           Style="{StaticResource Style_Label}" />
-                                    <TextBox x:Name="Input_District"
-                                             Style="{StaticResource Style_Input}" />
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                                    <Label Content="Населённый пункт"
-                                           Target="Input_Locality"
-                                           Style="{StaticResource Style_Label}" />
-                                    <TextBox x:Name="Input_Locality"
-                                             Style="{StaticResource Style_Input}" />
-                                </StackPanel>
+                                <c:InputComponent x:Name="Input_Region" 
+                                                  Label="Регион(республика, край, область, округ)"/>
+                                <c:InputComponent x:Name="Input_District" 
+                                                  Label="Район"/>
+                                <c:InputComponent x:Name="Input_Locality" 
+                                                  Label="Населённый пункт"/>
                             </StackPanel>
                         </GroupBox>
                     </StackPanel>

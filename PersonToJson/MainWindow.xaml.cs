@@ -38,16 +38,16 @@ public partial class MainWindow : Window
         var personalInfo = PersonalInfo.Load(path);
         if (personalInfo is null) return;
         
-        Input_LastName.Text = personalInfo.Person.LastName;
-        Input_FirstName.Text = personalInfo.Person.FirstName;
-        Input_Patronymic.Text = personalInfo.Person.Patronymic ?? string.Empty;
+        Input_LastName.Input.Text = personalInfo.Person.LastName;
+        Input_FirstName.Input.Text = personalInfo.Person.FirstName;
+        Input_Patronymic.Input.Text = personalInfo.Person.Patronymic ?? string.Empty;
         
-        Input_Phone.Text = personalInfo.Contacts.Phone;
-        Input_Email.Text = personalInfo.Contacts.Email;
+        Input_Phone.Input.Text = personalInfo.Contacts.Phone;
+        Input_Email.Input.Text = personalInfo.Contacts.Email;
         
-        Input_Region.Text = personalInfo.Contacts.Address.Region ?? string.Empty;
-        Input_District.Text = personalInfo.Contacts.Address.District ?? string.Empty;
-        Input_Locality.Text = personalInfo.Contacts.Address.Locality;
+        Input_Region.Input.Text = personalInfo.Contacts.Address.Region ?? string.Empty;
+        Input_District.Input.Text = personalInfo.Contacts.Address.District ?? string.Empty;
+        Input_Locality.Input.Text = personalInfo.Contacts.Address.Locality;
     }
 
     private void ButtonSave_OnClick(object sender, RoutedEventArgs e)
@@ -59,19 +59,19 @@ public partial class MainWindow : Window
         {
             Person = new Person()
             {
-                LastName = Input_LastName.Text,
-                FirstName = Input_FirstName.Text,
-                Patronymic = Input_Patronymic.Text
+                LastName = Input_LastName.Input.Text,
+                FirstName = Input_FirstName.Input.Text,
+                Patronymic = Input_Patronymic.Input.Text
             },
             Contacts = new Contacts()
             {
-                Phone = Input_Phone.Text,
-                Email = Input_Email.Text,
+                Phone = Input_Phone.Input.Text,
+                Email = Input_Email.Input.Text,
                 Address = new Address()
                 {
-                    Region = Input_Region.Text,
-                    District = Input_District.Text,
-                    Locality = Input_Locality.Text
+                    Region = Input_Region.Input.Text,
+                    District = Input_District.Input.Text,
+                    Locality = Input_Locality.Input.Text
                 }
             }
         };
