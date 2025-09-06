@@ -1,4 +1,4 @@
-﻿<Window x:Class="PersonToJson.MainWindow"
+﻿<Window x:Class="PersonToJson.Windows.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:c="clr-namespace:PersonToJson.Components"
@@ -50,16 +50,19 @@
             </StackPanel>
         </GroupBox>
 
-        <StackPanel Orientation="Horizontal">
-            <Label Content="Путь к файлу"
-                   Target="Input_Path"
-                   Style="{StaticResource Style_Label}" />
-            <TextBox x:Name="Input_Path"
-                     Style="{StaticResource Style_Input}" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <c:InputComponent x:Name="Input_Path" 
+                              Label="Путь к файлу"
+                              Grid.Column="0"/>
             <Button Content="Выбрать..."
                     Style="{StaticResource Style_ButtonPath}"
-                    Click="ButtonPath_OnClick" />
-        </StackPanel>
+                    Click="ButtonPath_OnClick" 
+                    Grid.Column="1"/>
+        </Grid>
 
         <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Center">

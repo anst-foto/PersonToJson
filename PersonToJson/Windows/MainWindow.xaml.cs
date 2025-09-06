@@ -1,8 +1,8 @@
 ﻿using System.Windows;
-using PersonToJson.Models;
 using Microsoft.Win32;
+using PersonToJson.Models;
 
-namespace PersonToJson;
+namespace PersonToJson.Windows;
 
 public partial class MainWindow : Window
 {
@@ -32,7 +32,7 @@ public partial class MainWindow : Window
 
     private void ButtonLoad_OnClick(object sender, RoutedEventArgs e)
     {
-        var path = Input_Path.Text;
+        var path = Input_Path.Input.Text;
         if (string.IsNullOrWhiteSpace(path)) return;
         
         var personalInfo = PersonalInfo.Load(path);
@@ -52,7 +52,7 @@ public partial class MainWindow : Window
 
     private void ButtonSave_OnClick(object sender, RoutedEventArgs e)
     {
-        var path = Input_Path.Text;
+        var path = Input_Path.Input.Text;
         if (string.IsNullOrWhiteSpace(path)) return;
         
         var personalInfo = new PersonalInfo()
@@ -96,7 +96,7 @@ public partial class MainWindow : Window
             case null:
                 return;
             case true:
-                Input_Path.Text = dlg.FileName;
+                Input_Path.Input.Text = dlg.FileName;
                 break;
         }
     }
